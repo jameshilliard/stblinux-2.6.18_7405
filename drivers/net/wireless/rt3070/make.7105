@@ -1,0 +1,6 @@
+#!/bin/sh
+export PATH=/opt/softs/compilers/st/st40/LINUX_4.2.4.final/STLinux-2.3/devkit/sh4_uclibc/bin/:$PATH
+#make $@ all LINUX_SRC=/local/jmgagnai/DELIVERY-2010-01-29-R8.1-03/src/cdi_drivers/stcdi/../../kernel PLATFORM=ST CROSS_COMPILE=sh4-linux-uclibc-
+make clean all LINUX_SRC=../../DELIV/src/kernel PLATFORM=ST CROSS_COMPILE=sh4-linux-uclibc-
+cp os/linux/rt3070sta.ko os/linux/rt3070sta.ko.dbg
+/opt/softs/compilers/st/st40/LINUX_4.2.4.final/STLinux-2.3/devkit/sh4_uclibc/bin/sh4-linux-uclibc-strip --strip-unneeded os/linux/rt3070sta.ko
